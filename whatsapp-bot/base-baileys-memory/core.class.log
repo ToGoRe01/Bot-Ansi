@@ -1,0 +1,143 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '573508306394@s.whatsapp.net',
+    fromMe: false,
+    id: '3FF8E7D5E6181EFFA715',
+    participant: undefined
+  },
+  messageTimestamp: 1732418470,
+  pushName: 'Soporte TI CO - Topaz',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: 'hola', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'hola',
+  from: '573508306394'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_bab00b1b-03a5-481a-b601-e0fd9015b7d5',
+  keyword: 'key_554e0150-17b7-45d9-b4df-154ce8da2413',
+  answer: '🙌 Hola bienvenido a este *Chatbot*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '15020cb7f0a1667a9f8c0424f6f8a232'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e00020d7-03a1-4601-af66-93a4fa94f80c',
+  keyword: 'ans_bab00b1b-03a5-481a-b601-e0fd9015b7d5',
+  answer: 'te comparto los siguientes links de interes sobre el proyecto\n' +
+    '👉 *doc* para ver la documentación\n' +
+    '👉 *gracias*  para ver la lista de videos\n' +
+    '👉 *discord* unirte al discord',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'bcd85bd1e0c9054c32a49f4b2aae121f'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573508306394@s.whatsapp.net',
+    fromMe: false,
+    id: '3F36F2695D0B2BF17FF6',
+    participant: undefined
+  },
+  messageTimestamp: 1732418472,
+  pushName: 'Soporte TI CO - Topaz',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: 'tuto', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'tuto',
+  from: '573508306394'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_c41ac91e-9681-465e-ada7-b3aed9943f21',
+  keyword: 'key_1e1e944e-9c57-4ea0-80be-f07258f83c18',
+  answer: '🙌 Aquí encontras un ejemplo rapido\n' +
+    'https://bot-whatsapp.netlify.app/docs/example/\n' +
+    '\n' +
+    '*2* Para siguiente paso.',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object] ],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3bb80c5f0c55a208ef2a8226619f980e'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573508306394@s.whatsapp.net',
+    fromMe: false,
+    id: '3F30E092B9871D50CFED',
+    participant: undefined
+  },
+  messageTimestamp: 1732418477,
+  pushName: 'Soporte TI CO - Topaz',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage { text: '2', contextInfo: [ContextInfo] },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '2',
+  from: '573508306394'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_5f17c8af-26bf-41cd-86ad-c1ceba187a72',
+  keyword: 'key_e0ce5a67-3fa4-4e20-a25d-4ed608a7b230',
+  answer: '📄 Aquí tenemos el flujo secundario',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a53bcf50011b2247a5b295478971a8c5'
+}
