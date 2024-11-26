@@ -143,9 +143,7 @@ module.exports = flowTest;
 
 const flowPrincipal = addKeyword('') // El asterisco captura cualquier palabra o mensaje
     .addAnswer('🙌 Hola bienvenido a este *Chatbot* de autoayuda')
-    .addAnswer('Noto que te quieres suicidar...')
-    .addAnswer('Pues me alegra')
-    .addAnswer('HAHHAHAHAHAHHAAHAHHAHAHAHHAHAHAHAAHHAHAHAHAHHAHAHAHAHHAHAHAAHHAAAHHAHHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAAHHAHA',
+    .addAnswer('Para comenzar por favor utiliza alguno de los siguientes comandos: \'test\', \'cuestionario\' o \'ansiedad\'',
         null,
         null,
         [flowTest] // Esto sigue activando el siguiente flujo
