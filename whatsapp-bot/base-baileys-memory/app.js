@@ -1,4 +1,6 @@
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
+const axios = require('axios');
+const { url, usuario, contra } = require('./environment')
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
@@ -6,6 +8,8 @@ const MockAdapter = require('@bot-whatsapp/database/mock')
 
 const userResponses = [];  // Array para almacenar las respuestas del usuario
 let salir = true;
+let token = '';
+let config = {};
 
 const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
     .addAction(async (_, { flowDynamic }) => {
@@ -15,13 +19,24 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
         { capture: true }, // Captura la respuesta del usuario
         async (ctx, { flowDynamic, endFlow }) => {
             const input = ctx.body?.trim().toLowerCase(); // Normaliza la respuesta del usuario
+            const registrado = (await axios.post(`${url}/api/login/find`, {
+                numero_celular: ctx.from.slice(2)
+            }, config)).data.data;
+            console.log(registrado);
+            console.log(ctx.from.slice(2));
             if (['sí', 'si'].includes(input)) {
-                salir = false;// Si responde sí, continúa con la primera pregunta
-                await flowDynamic('📝 Perfecto. Empecemos con la primera pregunta: ¿Has sentido temblor en las piernas?');
+                if (registrado == null) {
+                    salir = true;
+                    await flowDynamic('Tu número no se encuentra registrado. Por favor, registra tu número en nuestro sistema para poder realizar este test.');
+                } else {
+                    salir = false;// Si responde sí, continúa con la primera pregunta
+                    await flowDynamic('📝 Perfecto. Empecemos con la primera pregunta: ¿Has sentido temblor en las piernas?');
+                }
+
             } else if (['no'].includes(input)) {
                 salir = true;// Si responde no, termina el flujo
                 await flowDynamic('👋 Entendido. Si necesitas ayuda, no dudes en escribirnos.');
-                 // Termina el flujo si la respuesta es "no".
+                // Termina el flujo si la respuesta es "no".
             } else {
                 // Si la respuesta es algo diferente a sí/no, vuelve a preguntar
                 await flowDynamic('⚠️ Por favor, responde solo con "sí" o "no". ¿Quieres comenzar el test?');
@@ -31,13 +46,14 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
     .addAction(
         { capture: true }, // Captura la respuesta para la primera pregunta
         async (ctx, { flowDynamic, endFlow }) => {
-            if(!salir){
-            const input = ctx.body?.trim(); // Captura la respuesta abierta
-            userResponses.push({ pregunta: '¿Has sentido temblor en las piernas?', respuesta: input });
-            await flowDynamic('😌 ¿Te resulta difícil relajarte?');  // Pregunta siguiente
-            }else{
+            if (salir) {
                 return endFlow();
+            } else {
+                const input = ctx.body?.trim(); // Captura la respuesta abierta
+                userResponses.push({ pregunta: '¿Has sentido temblor en las piernas?', respuesta: input });
+                await flowDynamic('😌 ¿Te resulta difícil relajarte?');  // Pregunta siguiente
             }
+
         }
     )
     .addAction(
@@ -138,10 +154,10 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
         }
     );
 
-    
+
 module.exports = flowTest;
 
-const flowPrincipal = addKeyword('') // El asterisco captura cualquier palabra o mensaje
+const flowPrincipal = addKeyword('Hola', 'Comenzar', 'kkkk') // El asterisco captura cualquier palabra o mensaje
     .addAnswer('🙌 Hola bienvenido a este *Chatbot* de autoayuda')
     .addAnswer('Para comenzar por favor utiliza alguno de los siguientes comandos: \'test\', \'cuestionario\' o \'ansiedad\'',
         null,
@@ -163,4 +179,22 @@ const main = async () => {
     QRPortalWeb()
 }
 
-main()
+const getToken = async () => {
+    try {
+        token = (await axios.post(`${url}/api/auth/get-token`, {
+            username: usuario,
+            password: contra
+        })).data.token;
+        config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        };
+    } catch (error) {
+        console.log(`Error en la petición: ${error.message}`)
+    }
+    main();
+}
+
+getToken()

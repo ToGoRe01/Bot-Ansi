@@ -1,0 +1,855 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '7D2A92B8556EDA0E755FFD1336C20C62',
+    participant: undefined
+  },
+  messageTimestamp: 1732646181,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Asd',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Asd',
+  from: '573208298392'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'E130208E4C84E1749D0DDD4D1E43FED8',
+    participant: undefined
+  },
+  messageTimestamp: 1732646185,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8e6a3a98-d31d-4c73-9d00-7aa5be7f3c37',
+  keyword: 'key_8a42ebc0-060f-4997-bc50-4f382194d08d',
+  answer: '🙌 Hola bienvenido a este *Chatbot* de autoayuda',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '9bd33e98b04729177edec41b13d265cc'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ee8329b5-2ed7-4b1c-874d-1fe06aa8f36b',
+  keyword: 'ans_8e6a3a98-d31d-4c73-9d00-7aa5be7f3c37',
+  answer: "Para comenzar por favor utiliza alguno de los siguientes comandos: 'test', 'cuestionario' o 'ansiedad'",
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '800110ae088b84c477da31cf723033de'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '3D6B6E5407F311D937718AA39381C74F',
+    participant: undefined
+  },
+  messageTimestamp: 1732646189,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Test',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Test',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_32ee7869-713a-42cf-b2bb-bb91062224ea',
+  keyword: 'key_82c699ae-7178-49c7-bac2-ebb34fe6e319',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'cef252d2bbf0d573bbccd77b24ffbcf2'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_982d74ac-b4f8-4aaa-9df5-80217f41377a',
+  keyword: 'ans_32ee7869-713a-42cf-b2bb-bb91062224ea',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'f5465799856d725e667e79008bd02200'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'D0C7362F616FA9703CE72AA0300DD43A',
+    participant: undefined
+  },
+  messageTimestamp: 1732646192,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a041d6e8-3247-4851-b29a-2ba405d10ccc',
+  keyword: 'ans_982d74ac-b4f8-4aaa-9df5-80217f41377a',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '546af8a6b6f759d866c212afdd875ca8'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'E4272392DF7BC49DFB716BD088E5ADEC',
+    participant: undefined
+  },
+  messageTimestamp: 1732646209,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '573208298392'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'DAE932150A500FD4BEDCC9D1B769EE74',
+    participant: undefined
+  },
+  messageTimestamp: 1732646218,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Hola',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8e6a3a98-d31d-4c73-9d00-7aa5be7f3c37',
+  keyword: 'key_8a42ebc0-060f-4997-bc50-4f382194d08d',
+  answer: '🙌 Hola bienvenido a este *Chatbot* de autoayuda',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '9bd33e98b04729177edec41b13d265cc'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ee8329b5-2ed7-4b1c-874d-1fe06aa8f36b',
+  keyword: 'ans_8e6a3a98-d31d-4c73-9d00-7aa5be7f3c37',
+  answer: "Para comenzar por favor utiliza alguno de los siguientes comandos: 'test', 'cuestionario' o 'ansiedad'",
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '800110ae088b84c477da31cf723033de'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '5A0E4484654E3BD416230412CD549589',
+    participant: undefined
+  },
+  messageTimestamp: 1732646222,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Test',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Test',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_32ee7869-713a-42cf-b2bb-bb91062224ea',
+  keyword: 'key_82c699ae-7178-49c7-bac2-ebb34fe6e319',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'cef252d2bbf0d573bbccd77b24ffbcf2'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_982d74ac-b4f8-4aaa-9df5-80217f41377a',
+  keyword: 'ans_32ee7869-713a-42cf-b2bb-bb91062224ea',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'f5465799856d725e667e79008bd02200'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '8C9DDB99350E41330C9F26D368A4EEE1',
+    participant: undefined
+  },
+  messageTimestamp: 1732646224,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a041d6e8-3247-4851-b29a-2ba405d10ccc',
+  keyword: 'ans_982d74ac-b4f8-4aaa-9df5-80217f41377a',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '546af8a6b6f759d866c212afdd875ca8'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '2EBFBF7FDB15622B06A1848BEE7BDEA6',
+    participant: undefined
+  },
+  messageTimestamp: 1732646229,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_09064b21-3e2f-49de-a4e8-6249f998ce24',
+  keyword: 'ans_a041d6e8-3247-4851-b29a-2ba405d10ccc',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'b378c5667d825579b3f98b34b9e52c99'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'A10CAEACF1A925161D4BE41AE40BA775',
+    participant: undefined
+  },
+  messageTimestamp: 1732646231,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_932b9b6d-37db-412b-bcb9-c8db94875096',
+  keyword: 'ans_09064b21-3e2f-49de-a4e8-6249f998ce24',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'c159ed3cf9859c09aa29527c46336486'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '0E42CE2BD58EFD2ED4DE173BFEB35CBF',
+    participant: undefined
+  },
+  messageTimestamp: 1732646233,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_6830d345-b7b2-4a6f-b299-af747dcf69a9',
+  keyword: 'ans_932b9b6d-37db-412b-bcb9-c8db94875096',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd0c9833e6fe76efcaa939738138e13ae'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '0CD973CF75DF940263586F916C58BB64',
+    participant: undefined
+  },
+  messageTimestamp: 1732646235,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_d63dbcbe-280c-40bd-bf66-9b178ad51836',
+  keyword: 'ans_6830d345-b7b2-4a6f-b299-af747dcf69a9',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '882f895e2bd5f399d736fce6d1866fc2'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '6D378E15A65E7FE09FCEF5BE66515E61',
+    participant: undefined
+  },
+  messageTimestamp: 1732646237,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_c08cd0aa-5950-4231-9c0a-d5da78b66444',
+  keyword: 'ans_d63dbcbe-280c-40bd-bf66-9b178ad51836',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '76a2d3fc935546f5ab6e84675e5c3f66'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'BD7E8401FE08C1BBA3B7B529CCC8211F',
+    participant: undefined
+  },
+  messageTimestamp: 1732646239,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_b849a147-edb3-4e92-95aa-77db2c452d29',
+  keyword: 'ans_c08cd0aa-5950-4231-9c0a-d5da78b66444',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '84cd5b88f3604db2d9e5177d3b964dff'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '59A5137975E815389DE879D52D0D68B7',
+    participant: undefined
+  },
+  messageTimestamp: 1732646240,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_571e0bba-9615-406d-84e1-28692cef02f8',
+  keyword: 'ans_b849a147-edb3-4e92-95aa-77db2c452d29',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '8501ffc8e5c69a672bf455129773ba7c'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'E409187FC719F938307598F3FE5BA5E2',
+    participant: undefined
+  },
+  messageTimestamp: 1732646242,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e7f795fc-8561-4930-883c-51925941d992',
+  keyword: 'ans_571e0bba-9615-406d-84e1-28692cef02f8',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '10f9d0e14a75d20fc94aad8b909175c7'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'FD4E32B0340876C230FF9E35E43DEE9A',
+    participant: undefined
+  },
+  messageTimestamp: 1732646244,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8707be58-9ade-4f57-9063-1dceecddeb68',
+  keyword: 'ans_e7f795fc-8561-4930-883c-51925941d992',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'f36281626e2936133edabb3261981542'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: 'A85506271C451B070F4271117B84914C',
+    participant: undefined
+  },
+  messageTimestamp: 1732646247,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_85888cf8-e622-4f05-9c3e-58ef2e7d6c7c',
+  keyword: 'ans_8707be58-9ade-4f57-9063-1dceecddeb68',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'ef30f2d0a3a0ccd04124c786c35ff20c'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '3D0E3A713E4E1FA736BF5279018125FB',
+    participant: undefined
+  },
+  messageTimestamp: 1732646249,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_df814a51-ba6d-49b1-bc0c-e89177170db3',
+  keyword: 'ans_85888cf8-e622-4f05-9c3e-58ef2e7d6c7c',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3f8d0ab9f100964b3d3129e0450add5c'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '29FAC4BB77D75D0AE4028A63131755E5',
+    participant: undefined
+  },
+  messageTimestamp: 1732646251,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_51a8507a-eaa6-4185-8c14-98b6be456e52',
+  keyword: 'ans_df814a51-ba6d-49b1-bc0c-e89177170db3',
+  answer: '__capture_only_intended__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '1bc1538af40671c30c5604f11b4cc8a4'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573208298392@s.whatsapp.net',
+    fromMe: false,
+    id: '6562C738460E6A41EFA51A6D906C62C4',
+    participant: undefined
+  },
+  messageTimestamp: 1732646252,
+  pushName: 'Harrison Ramírez',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Si',
+  from: '573208298392'
+}
