@@ -1,0 +1,18 @@
+{
+	"name": "Ubuntu Node Python",
+	"image": "harrison237/ubuntu-node-py:v1",
+	"forwardPorts": [
+		3000
+	],
+	"runArgs": [
+		"--name",
+		"Bot-Ansi"
+	]
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	,
+	"features": {}
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "devcontainer"
+}
