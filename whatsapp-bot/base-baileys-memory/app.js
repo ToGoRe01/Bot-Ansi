@@ -1,10 +1,12 @@
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
 const axios = require('axios');
 const { url, usuario, contra, loginUri } = require('./environment')
+const { spawn } = require('child_process');
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
-const MockAdapter = require('@bot-whatsapp/database/mock')
+const MockAdapter = require('@bot-whatsapp/database/mock');
+const { jidDecode } = require('@whiskeysockets/baileys');
 
 const userResponses = [];  // Array para almacenar las respuestas del usuario
 let salir = true;
@@ -22,10 +24,12 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
             const registrado = (await axios.post(`${url}/api/login/find`, {
                 numero_celular: ctx.from.slice(2)
             }, config)).data.data;
+
             if (['sí', 'si'].includes(input)) {
                 if (registrado == null) {
                     salir = true;
                     await flowDynamic(`Tu número no se encuentra registrado. Por favor, registra tu número en nuestro sistema para poder realizar este test, mediante el siguiente link ${loginUri}`);
+                    return endFlow();
                 } else {
                     salir = false;// Si responde sí, continúa con la primera pregunta
                     await flowDynamic('📝 Perfecto. Empecemos con la primera pregunta: ¿Has sentido temblor en las piernas?');
@@ -147,8 +151,20 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
         async (ctx, { flowDynamic }) => {
             const input = ctx.body?.trim(); // Captura la respuesta abierta
             userResponses.push({ pregunta: '¿Tienes problemas digestivos?', respuesta: input });
-            await flowDynamic('✅ Gracias por completar el cuestionario. Si necesitas más ayuda, no dudes en escribirnos.');
+            await flowDynamic('✅ Gracias por completar el cuestionario. En un momento te daremos los resultados con base a las respuestas que nos brindaste.');
             console.log(userResponses);
+        }
+    )
+    .addAction(
+        {},
+        async (ctx, { flowDynamic }) => {
+            const valores = userResponses.map(r => r.respuesta.toLocaleLowerCase().trim());
+            const diagnostico = await runPythonScript('../../Python/Interpretador.py', JSON.stringify({ results: valores }));
+            const resultados = JSON.parse(diagnostico);
+            
+            console.log(resultados);
+
+            await flowDynamic(`Aquí están tus resultados!\nTienes un nivel de estrés: ${resultados.anxiety_status}\nEn un porcentaje del: ${resultados.stress_level}%\nTu recomendación: ${resultados.advice}`)
         }
     );
 
@@ -195,4 +211,33 @@ const getToken = async () => {
     main();
 }
 
-getToken()
+getToken();
+
+// Función para ejecutar el script de Python
+async function runPythonScript(script, args) {
+    return new Promise((resolve, reject) => {
+        const pythonProcess = spawn('python3', [script, args]);
+
+        let output = '';
+        let error = '';
+
+        // Recoger datos del script
+        pythonProcess.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+
+        // Capturar errores
+        pythonProcess.stderr.on('data', (data) => {
+            error += data.toString();
+        });
+
+        // Detectar cuando el proceso termina
+        pythonProcess.on('close', (code) => {
+            if (code === 0) {
+                resolve(output.trim()); // Devuelve el resultado si todo fue bien
+            } else {
+                reject(new Error(`Código de error: ${code}\n${error}`)); // Rechaza si hubo un error
+            }
+        });
+    });
+}

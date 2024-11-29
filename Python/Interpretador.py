@@ -1,9 +1,15 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import json
+import sys
+
+node_data = sys.argv[1]
+data_parsed = json.loads(node_data)
+user_responses = data_parsed["results"]
 
 # Respuestas posibles y pesos asignados
-positive_responses = ["sí", "sip", "sipo", "ajá", "claro", "por supuesto", "seguro", "sí, claro", "obvio", "definitivamente", "afirmativo"]
+positive_responses = ["si", "sí", "sip", "sipo", "ajá", "claro", "por supuesto", "seguro", "sí, claro", "obvio", "definitivamente", "afirmativo"]
 negative_responses = ["no", "nope", "nop", "nel", "nunca", "jamás", "nah", "imposible", "para nada", "ni de chiste", "negativo"]
 
 # Etiquetas y dataset simulado
@@ -60,7 +66,7 @@ for epoch in range(epochs):
     loss.backward()
     optimizer.step()
     if (epoch + 1) % 10 == 0:
-        print(f"Epoch {epoch + 1}/{epochs}, Loss: {loss.item()}")
+        print(f"Epoch {epoch + 1}/{epochs}, Loss: {loss.item()}", file=sys.stderr)
 
 # Función para predecir
 def predict_responses(new_responses):
@@ -72,7 +78,7 @@ def predict_responses(new_responses):
 
 # Evaluación con porcentaje asignado a cada pregunta
 def evaluate_user_responses(user_responses):
-    percentages = [8, 10, 12, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
+    percentages = [8, 10, 7, 5, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
     predictions = predict_responses(user_responses)
     positive_percentage = sum(percentages[i] for i in range(len(user_responses)) if predictions[i] == 1)
     total_percentage = sum(percentages)
@@ -90,7 +96,7 @@ def evaluate_user_responses(user_responses):
 
 # Evaluación con consejos amigables según el nivel de ansiedad
 def evaluate_user_responses_with_advice(user_responses):
-    percentages = [8, 10, 12, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
+    percentages = [8, 10, 7, 5, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
     predictions = predict_responses(user_responses)
     positive_percentage = sum(percentages[i] for i in range(len(user_responses)) if predictions[i] == 1)
     total_percentage = sum(percentages)
@@ -100,7 +106,7 @@ def evaluate_user_responses_with_advice(user_responses):
     if stress_level < 30:
         anxiety_status = "Bajo"
         advice = (
-            "¡Genial! Parece que te sientes tranquilo. Mantén este estado disfrutando actividades que te gusten, "
+            "¡Genial! Parece que te sientes tranquilo. Manten este estado disfrutando actividades que te gusten, "
             "como leer, caminar o escuchar música."
         )
     elif 30 <= stress_level < 60:
@@ -119,11 +125,13 @@ def evaluate_user_responses_with_advice(user_responses):
     return stress_level, anxiety_status, advice
 
 # Simulación de respuestas del usuario
-user_responses = ["sí", "no", "nunca", "quizás", "definitivamente", "nah", "sí", "imposible", "claro", "jamás", "ajá", "obvio"]
 stress_level, anxiety_status, advice = evaluate_user_responses_with_advice(user_responses)
 
 # Resultado
-print(f"Porcentaje de respuestas positivas: {stress_level:.2f}%")
-print(f"Nivel de ansiedad: {anxiety_status}")
-print(f"Consejo: {advice}")
+diagnostico = {
+    "stress_level": stress_level,
+    "anxiety_status": anxiety_status,
+    "advice": advice
+}
+print(json.dumps(diagnostico))
 
