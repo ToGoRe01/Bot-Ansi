@@ -1,6 +1,6 @@
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
 const axios = require('axios');
-const { url, usuario, contra } = require('./environment')
+const { url, usuario, contra, loginUri } = require('./environment')
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
@@ -22,12 +22,10 @@ const flowTest = addKeyword(['test', 'cuestionario', 'ansiedad'])
             const registrado = (await axios.post(`${url}/api/login/find`, {
                 numero_celular: ctx.from.slice(2)
             }, config)).data.data;
-            console.log(registrado);
-            console.log(ctx.from.slice(2));
             if (['sí', 'si'].includes(input)) {
                 if (registrado == null) {
                     salir = true;
-                    await flowDynamic('Tu número no se encuentra registrado. Por favor, registra tu número en nuestro sistema para poder realizar este test.');
+                    await flowDynamic(`Tu número no se encuentra registrado. Por favor, registra tu número en nuestro sistema para poder realizar este test, mediante el siguiente link ${loginUri}`);
                 } else {
                     salir = false;// Si responde sí, continúa con la primera pregunta
                     await flowDynamic('📝 Perfecto. Empecemos con la primera pregunta: ¿Has sentido temblor en las piernas?');
