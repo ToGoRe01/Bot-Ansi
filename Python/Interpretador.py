@@ -2,26 +2,23 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-# Ampliación de respuestas positivas y negativas
-positive_responses = [
-    "sí", "sip", "sipo", "ajá", "claro", "por supuesto", "seguro", 
-    "sí, claro", "obvio", "yep", "yeah", "yup", "definitivamente", 
-    "afirmativo", "correcto", "eso es"
-]
-negative_responses = [
-    "no", "nope", "nop", "nel", "nunca", "jamás", "nah", 
-    "imposible", "para nada", "ni de chiste", "negativo"
-]
+# Respuestas posibles y pesos asignados
+positive_responses = ["sí", "sip", "sipo", "ajá", "claro", "por supuesto", "seguro", "sí, claro", "obvio", "definitivamente", "afirmativo"]
+negative_responses = ["no", "nope", "nop", "nel", "nunca", "jamás", "nah", "imposible", "para nada", "ni de chiste", "negativo"]
 
-# Dataset extendido de respuestas y etiquetas (1 = positiva, 0 = negativa)
+# Etiquetas y dataset simulado
 responses = positive_responses + negative_responses
 labels = [1] * len(positive_responses) + [0] * len(negative_responses)
 
-# Tokenización básica (convertir palabras a índices)
-vocab = {word: i for i, word in enumerate(set(" ".join(responses).split()))}
-tokenized_responses = [[vocab[word] for word in response.split()] for response in responses]
+# Generar vocabulario a partir de todas las palabras
+all_words = set(word for response in responses for word in response.split())
+vocab = {word: i + 1 for i, word in enumerate(all_words)}  # Índices empiezan desde 1
+vocab["<UNK>"] = 0  # Palabra desconocida
 
-# Padding para que todas las secuencias tengan la misma longitud
+# Tokenización
+tokenized_responses = [[vocab.get(word, 0) for word in response.split()] for response in responses]
+
+# Padding
 max_len = max(len(seq) for seq in tokenized_responses)
 padded_responses = [seq + [0] * (max_len - len(seq)) for seq in tokenized_responses]
 
@@ -29,7 +26,7 @@ padded_responses = [seq + [0] * (max_len - len(seq)) for seq in tokenized_respon
 X = torch.tensor(padded_responses, dtype=torch.long)
 y = torch.tensor(labels, dtype=torch.float32)
 
-# Modelo básico de red neuronal
+# Modelo básico
 class SimpleClassifier(nn.Module):
     def __init__(self, vocab_size, embedding_dim, hidden_dim):
         super(SimpleClassifier, self).__init__()
@@ -39,7 +36,7 @@ class SimpleClassifier(nn.Module):
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
-        embedded = self.embedding(x).mean(dim=1)  # Promedio de los embeddings
+        embedded = self.embedding(x).mean(dim=1)
         hidden = torch.relu(self.fc(embedded))
         out = self.sigmoid(self.output(hidden))
         return out
@@ -73,7 +70,60 @@ def predict_responses(new_responses):
     predictions = model(X_new).squeeze()
     return [int(pred > 0.5) for pred in predictions]
 
-# Prueba con nuevas respuestas
-test_responses = ["sí", "no", "nunca", "quizás", "definitivamente", "sip", "nah", "obvio", "jamás"]
-predictions = predict_responses(test_responses)
-print("Predicciones:", predictions)
+# Evaluación con porcentaje asignado a cada pregunta
+def evaluate_user_responses(user_responses):
+    percentages = [8, 10, 12, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
+    predictions = predict_responses(user_responses)
+    positive_percentage = sum(percentages[i] for i in range(len(user_responses)) if predictions[i] == 1)
+    total_percentage = sum(percentages)
+    
+    # Calcular nivel de ansiedad
+    stress_level = (positive_percentage / total_percentage) * 100
+    if stress_level < 30:
+        anxiety_status = "Bajo"
+    elif 30 <= stress_level < 60:
+        anxiety_status = "Moderado"
+    else:
+        anxiety_status = "Alto"
+
+    return stress_level, anxiety_status
+
+# Evaluación con consejos amigables según el nivel de ansiedad
+def evaluate_user_responses_with_advice(user_responses):
+    percentages = [8, 10, 12, 10, 5, 8, 7, 10, 12, 8, 5, 5]  # Porcentajes asignados a cada pregunta
+    predictions = predict_responses(user_responses)
+    positive_percentage = sum(percentages[i] for i in range(len(user_responses)) if predictions[i] == 1)
+    total_percentage = sum(percentages)
+    
+    # Calcular nivel de ansiedad
+    stress_level = (positive_percentage / total_percentage) * 100
+    if stress_level < 30:
+        anxiety_status = "Bajo"
+        advice = (
+            "¡Genial! Parece que te sientes tranquilo. Mantén este estado disfrutando actividades que te gusten, "
+            "como leer, caminar o escuchar música."
+        )
+    elif 30 <= stress_level < 60:
+        anxiety_status = "Moderado"
+        advice = (
+            "Es posible que tengas algo de tensión. Considera tomar pequeños descansos, "
+            "hacer ejercicios de respiración o practicar algún hobby que te relaje."
+        )
+    else:
+        anxiety_status = "Alto"
+        advice = (
+            "Parece que podrías estar sintiendo bastante estrés. Te sugerimos cuidar de ti mismo: "
+            "descansa lo suficiente, come bien y, si es necesario, habla con alguien de confianza sobre cómo te sientes."
+        )
+    
+    return stress_level, anxiety_status, advice
+
+# Simulación de respuestas del usuario
+user_responses = ["sí", "no", "nunca", "quizás", "definitivamente", "nah", "sí", "imposible", "claro", "jamás", "ajá", "obvio"]
+stress_level, anxiety_status, advice = evaluate_user_responses_with_advice(user_responses)
+
+# Resultado
+print(f"Porcentaje de respuestas positivas: {stress_level:.2f}%")
+print(f"Nivel de ansiedad: {anxiety_status}")
+print(f"Consejo: {advice}")
+
